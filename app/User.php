@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest;
+namespace laravelPeople;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

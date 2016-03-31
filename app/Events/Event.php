@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Events;
+namespace laravelPeople\Events;
 
 abstract class Event
 {

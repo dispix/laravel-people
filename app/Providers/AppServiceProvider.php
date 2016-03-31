@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Providers;
+namespace laravelPeople\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

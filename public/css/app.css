@@ -1,11 +1,17 @@
 body {
   padding-top: 70px; }
 
-h1 {
+h1, h2 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: inline-block; }
 
 .active a {
-  font-weight: 700; }
+  font-weight: bold; }
+
+.page-header .edit-btn, .page-header .delete-btn {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=app.css.map */

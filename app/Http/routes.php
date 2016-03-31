@@ -11,22 +11,32 @@
 |
 */
 
-Route::get('/', [
+Route::get('/',
+[
 	'as' => 'home',
 	'uses' => 'Controller@home'
 ]);
 
-Route::get('/people', [
+Route::get('/people',
+[
 	'as' => 'people',
 	'uses' => 'PeopleController@readAll'
 ]);
 
 Route::get('/people/{id}', 'PeopleController@read');
 
-Route::post('/people', 'PeopleController@create');
+Route::post('/people',
+[
+	'as' => 'people',
+	'uses' => 'PeopleController@create'
+]);
 
 Route::put('/people/{id}', 'PeopleController@update');
 
 Route::delete('/people/{id}', 'PeopleController@delete');
 
-Route::get('/people.json', 'PeopleController@readAllJson');
+Route::get('/people.json',
+[
+	'as' => 'people.json',
+	'uses' => 'PeopleController@readAllJson'
+]);

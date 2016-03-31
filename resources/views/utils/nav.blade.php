@@ -9,7 +9,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1 class="navbar-brand">{{ isset($title) ? $title : 'People'}}</h1>
+					<a href="{{ route('home') }}"><h2 class="navbar-brand">Laravel People</h2></a>
 				</div>
 				<div class="collapse navbar-collapse" id="navbar">
 					<ul class="nav navbar-nav">

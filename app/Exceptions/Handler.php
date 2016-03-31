@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Exceptions;
+namespace laravelPeople\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

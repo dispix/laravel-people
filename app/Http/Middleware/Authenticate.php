@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Http\Middleware;
+namespace laravelPeople\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

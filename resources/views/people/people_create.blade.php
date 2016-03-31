@@ -1,6 +1,7 @@
 <!-- Button trigger modal -->
 <div class="col-xs-12">
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#people_create">
+		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 		Add new
 	</button>
 </div>
@@ -17,20 +18,20 @@
 				<div class="modal-body">
 					<div class="row">
 							<div class="form-group col-xs-12 col-sm-6">
-								<label for="people_name">Name</label>
-								<input type="text" class="form-control" id="people_name" name="people_name" placeholder="Name">
+								<label for="name">Name</label>
+								<input required minlength="2" maxlength="63" type="text" class="form-control" id="name" name="name" placeholder="Name">
 							</div>
 							<div class="form-group col-xs-12 col-sm-6">
-								<label for="people_lastname">Last Name</label>
-								<input type="text" class="form-control" id="people_lastname" name="people_lastname" placeholder="Last Name">
+								<label for="lastname">Last Name</label>
+								<input required minlength="2" maxlength="63" type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
 							</div>
 							<div class="form-group col-xs-12 col-sm-6">
-								<label for="people_email">Email address</label>
-								<input type="email" class="form-control" id="people_email" name="people_email" placeholder="Email">
+								<label for="email">Email address</label>
+								<input required maxlength="127" type="email" class="form-control" id="email" name="email" placeholder="Email">
 							</div>
 							<div class="form-group col-xs-12 col-sm-6">
-								<label for="people_birthday">Birthday</label>
-								<input type="date" class="form-control" id="people_birthday" name="people_birthday">
+								<label for="birthday">Birthday</label>
+								<input required type="date" class="form-control" id="birthday" name="birthday">
 							</div>
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					</div>

@@ -27,11 +27,11 @@
 
 		@include('utils/nav')
 
-		@if(Session::has('success'))
+		@if (Session::has('success'))
 			@include('utils/success')
 		@endif
 
-		@if(Session::has('error'))
+		@if (count($errors) > 0)
 			@include('utils/error')
 		@endif
 

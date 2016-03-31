@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Providers;
+namespace laravelPeople\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'laravelTest\Events\SomeEvent' => [
-            'laravelTest\Listeners\EventListener',
+        'laravelPeople\Events\SomeEvent' => [
+            'laravelPeople\Listeners\EventListener',
         ],
     ];
 

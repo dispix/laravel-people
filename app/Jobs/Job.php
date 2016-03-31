@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Jobs;
+namespace laravelPeople\Jobs;
 
 use Illuminate\Bus\Queueable;
 

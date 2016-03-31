@@ -1,6 +1,6 @@
 <?php
 
-namespace laravelTest\Http;
+namespace laravelPeople\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \laravelTest\Http\Middleware\EncryptCookies::class,
+            \laravelPeople\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \laravelTest\Http\Middleware\VerifyCsrfToken::class,
+            \laravelPeople\Http\Middleware\VerifyCsrfToken::class,
         ],
 
         'api' => [
@@ -44,9 +44,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \laravelTest\Http\Middleware\Authenticate::class,
+        'auth' => \laravelPeople\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \laravelTest\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \laravelPeople\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }
