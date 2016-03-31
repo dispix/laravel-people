@@ -50,7 +50,9 @@
 	<script type="text/javascript">
 		window.onload = function()
 		{
-			$('#people_table').DataTable()
+			$('#people_table').DataTable({
+				'order': [[1, 'asc'], [0, 'asc']]
+			})
 		}
 	</script>
 @endsection
