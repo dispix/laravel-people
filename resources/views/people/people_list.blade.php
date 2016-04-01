@@ -25,10 +25,10 @@
 					@foreach($people as $someone)
 						<tr>
 							<td>
-								<a href="{{ route('people') }}/{{ $someone -> id}}">{{ $someone -> name }}</a>
+								<a href="{{ route('someone', ['id' => $someone -> id]) }}">{{ $someone -> name }}</a>
 							</td>
 							<td>
-								<a href="{{ route('people') }}/{{ $someone -> id}}">{{ $someone -> lastname }}</a>
+								<a href="{{ route('someone', ['id' => $someone -> id]) }}">{{ $someone -> lastname }}</a>
 							</td>
 							<td>
 								<a href="mailto:{{ $someone -> email }}">{{ $someone -> email }}</a>

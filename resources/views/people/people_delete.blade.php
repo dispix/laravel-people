@@ -1,11 +1,11 @@
-<button type="button" class="delete-btn btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_people_{{ $someone -> id }}">
+<button type="button" class="delete-btn btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_someone_{{ $someone -> id }}">
 	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button>
-<div class="modal fade" id="delete_people_{{ $someone -> id }}" tabindex="-1" role="dialog" aria-labelledby="delete_people_label">
+<div class="modal fade" id="delete_someone_{{ $someone -> id }}" tabindex="-1" role="dialog" aria-labelledby="delete_someone_label">
 	<div class="modal-dialog modal-sm" role="document">
 		<div class="modal-content">
 
-			<form action="{{ route('people') }}" method="delete">
+			<form action="{{ route('delete_someone') }}" method="POST">
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-xs-12">

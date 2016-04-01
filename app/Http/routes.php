@@ -13,30 +13,42 @@
 
 Route::get('/',
 [
-	'as' => 'home',
-	'uses' => 'Controller@home'
+	'as' 	=> 'home',
+	'uses' 	=> 'Controller@home'
 ]);
 
 Route::get('/people',
 [
-	'as' => 'people',
-	'uses' => 'PeopleController@readAll'
+	'as' 	=> 'people',
+	'uses' 	=> 'PeopleController@readAll'
 ]);
 
-Route::get('/people/{id}', 'PeopleController@read');
+Route::get('/people/{id}',
+[
+	'as' 	=> 'someone',
+	'uses' 	=> 'PeopleController@read'
+]);
 
 Route::post('/people',
 [
-	'as' => 'people',
-	'uses' => 'PeopleController@create'
+	'as' 	=> 'create_someone',
+	'uses' 	=> 'PeopleController@create'
 ]);
 
-Route::put('/people/{id}', 'PeopleController@update');
+Route::post('/people/update',
+[
+	'as' 	=> 'update_someone',
+	'uses'	=> 'PeopleController@update'
+]);
 
-Route::delete('/people/{id}', 'PeopleController@delete');
+Route::post('/people/delete',
+[
+	'as' 	=> 'delete_someone',
+	'uses'	=> 'PeopleController@delete'
+]);
 
 Route::get('/people.json',
 [
-	'as' => 'people.json',
-	'uses' => 'PeopleController@readAllJson'
+	'as' 	=> 'people.json',
+	'uses' 	=> 'PeopleController@readAllJson'
 ]);

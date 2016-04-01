@@ -56,18 +56,18 @@ class PeopleController extends Controller
 		$this -> validate($request, [
 			'name' 		=> 'required|min:2|max:63',
 			'lastname' 	=> 'required|min:2|max:63',
-			'email' 	=> 'required|email|max:127',
+			'email' 	=> 'required|email|max:127|unique:people',
 			'birthday' 	=> 'required|date',
 		]);
 
-		$people = new People();
+		$someone = new People();
 
-		$people -> name 	= $this -> titleCase($params['name']);
-		$people -> lastname = $this -> titleCase($params['lastname']);
-		$people -> email 	= strtolower($params['email']);
-		$people -> birthday = $params['birthday'];
+		$someone -> name 	= $this -> titleCase($params['name']);
+		$someone -> lastname = $this -> titleCase($params['lastname']);
+		$someone -> email 	= strtolower($params['email']);
+		$someone -> birthday = $params['birthday'];
 
-		$people -> save();
+		$someone -> save();
 
 		return redirect() -> route('people') -> with('success', 'A new people has been created !');
 	}
@@ -76,14 +76,11 @@ class PeopleController extends Controller
 	{
 		$someone = People::find($id);
 
-		if ($someone === NULL)
-		{
-			return view('utils/404');
-		}
+		if (!$someone) return view('utils.404');
 
 		$someone['birthday'] = new Carbon($someone['birthday']);
 
-		return view('people/people_detail') -> with('someone', $someone);
+		return view('people.people_detail') -> with('someone', $someone);
 	}
 
 	public function readAll()
@@ -96,17 +93,43 @@ class PeopleController extends Controller
 			$someone['birthday'] = new Carbon($someone['birthday']);
 		}
 
-		return view('people/people_list') -> with('people', $people);
+		return view('people.people_list') -> with('people', $people);
 	}
 
-	public function update($id)
+	public function update(Request $request)
 	{
+		$params 	= $request -> all();
+		$someone 	= People::find($params['id']);
 
+		if (!$someone) return $this -> readAll();
+
+		$this -> validate($request,
+		[
+			'name' 		=> 'required|min:2|max:63',
+			'lastname' 	=> 'required|min:2|max:63',
+			'email' 	=> 'required|email|max:127|unique:people,email,'.$params['id'],
+			'birthday' 	=> 'required|date',
+		]);
+
+		$someone -> name 		= $this -> titleCase($params['name']);
+		$someone -> lastname 	= $this -> titleCase($params['lastname']);
+		$someone -> email 		= strtolower($params['email']);
+		$someone -> birthday 	= $params['birthday'];
+
+		$someone -> save();
+
+		return redirect() -> back() -> with('success', $someone -> name . " " . $someone -> lastname . " informations have been updated");
 	}
 
-	public function delete($id)
+	public function delete(Request $request)
 	{
+		$someone = People::find($request -> input('id'));
 
+		if (!$someone) return $this -> readAll();
+
+		$someone -> delete();
+
+		return redirect() -> route('people') -> with('success', 'Deletion succesful');
 	}
 
 	public function readAllJson(Request $request)

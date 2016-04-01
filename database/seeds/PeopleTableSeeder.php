@@ -23,7 +23,7 @@ class PeopleTableSeeder extends Seeder
 			[
 				'name' 		=> $faker -> firstName(),
 				'lastname' 	=> $faker -> lastName(),
-				'email' 	=> $faker -> email(),
+				'email' 	=> strtolower($faker -> email()),
 				'birthday'	=> $faker -> date($format = 'Y-m-d', $max = 'now')
 			]);
 		}

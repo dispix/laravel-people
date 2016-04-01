@@ -14,7 +14,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="people_create_label">Add People</h4>
 			</div>
-			<form action="{{ route('people') }}" method="post">
+			<form action="{{ route('create_someone') }}" method="post">
 				<div class="modal-body">
 					<div class="row">
 							<div class="form-group col-xs-12 col-sm-6">
