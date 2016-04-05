@@ -69,7 +69,7 @@ class PeopleController extends Controller
 
 		$someone -> save();
 
-		return redirect() -> route('people') -> with('success', 'A new people has been created !');
+		return redirect() -> route('people') -> with('success', 'A new person has been created !');
 	}
 
 	public function read($id)
@@ -135,11 +135,6 @@ class PeopleController extends Controller
 	public function readAllJson(Request $request)
 	{
 		$collection = People::all();
-
-		foreach ($collection as $someone)
-		{
-			$someone['birthday'] = new Carbon($someone['birthday']);
-		}
 
 		return response() -> json($collection) -> setCallback($request -> input('callback'));
 	}
